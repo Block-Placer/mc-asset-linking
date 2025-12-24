@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <p id="message">Redirecting…</p>
+
+  <script>
+    const redirects = {
+      "/google": "https://google.com",
+      "/github": "https://github.com",
+      "/docs": "https://example.com/docs"
+    };
+
+    const path = window.location.pathname.replace(/\/$/, "");
+
+    if (redirects[path]) {
+      window.location.replace(redirects[path]);
+    } else {
+      document.getElementById("message").innerText =
+        "Redirect not found.";
+    }
+  </script>
+</body>
+</html>
